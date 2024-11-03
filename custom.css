@@ -1,0 +1,16 @@
+.v-navigation-drawer {
+    min-width: 200px !important; /* For small side sidebar to acoomodate responsiveness of cards*/
+}
+
+.solara-markdown {
+    padding: 0px; /* For more compact card view */
+}
+
+.jupyter-widgets {
+    width: 130px;
+}
+
+.v-application--wrap > div:nth-child(2) > div:nth-child(2){
+    display: none !important;
+}
+

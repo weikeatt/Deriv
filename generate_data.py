@@ -71,6 +71,10 @@ def create_dummy_data(num_rows):
         for stage in activity_stages[current_stage_index + 1:]:
             activity_feed.append(f"{stage} - N/A")
 
+        # Randomly assign PHOTO MATCHED and IC VERIFIED
+        photo_matched = random.randint(0, 1)
+        ic_verified = random.randint(0, 1)
+
         data.append([
             applicant_id, 
             applicant_date.strftime('%Y-%m-%d %H:%M'),
@@ -92,7 +96,9 @@ def create_dummy_data(num_rows):
             source_of_funds, 
             risk_level, 
             compliance_probability,
-            "\n".join(activity_feed)
+            "\n".join(activity_feed),
+            photo_matched,
+            ic_verified
         ])
     
     return data
@@ -100,15 +106,16 @@ def create_dummy_data(num_rows):
 # Create DataFrame
 columns = [
     "Applicant ID", "Application Date", "Full Name", "Status", "Rating Score",
-    "Additional Remarks", "Date of Birth", "Gender", "Race", "Nationality", 
+    "Details", "Date of Birth", "Gender", "Race", "Nationality", 
     "Address", "Employment Status", "Occupation", "Annual Income (RM)", 
     "Net Worth (RM)", "Attempt of Application", "Time Taken (minutes)", 
-    "Source of Funds", "Risk Level", "Compliance Probability", "Activity Feed"
+    "Source of Funds", "Risk Level", "Compliance Probability", 
+    "Activity Feed", "PHOTO MATCHED", "IC VERIFIED"
 ]
 
 dummy_data = create_dummy_data(50)
 df = pd.DataFrame(dummy_data, columns=columns)
 
 # Save to Excel
-df.to_excel("dummy_applicant_data.xlsx", index=False)
-print("Dummy data saved to 'dummy_applicant_data.xlsx'.")
+df.to_excel("applicant_data.xlsx", index=False)
+print("Applicant data saved to 'applicant_data.xlsx'.")

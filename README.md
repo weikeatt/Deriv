@@ -7,9 +7,9 @@ This project is an Applicant Management System built using Python and the Solara
 - [Usage](#usage)
   - [Step 1: Generate Applicants' Data](#step-1-generate-applicants-data)
   - [Step 2: Run the Application](#step-2-run-the-application)
-- [File Structure](#file-structure-)
+- [File Structure](#file-structure)
 
-## Installation🛠️
+## Installation📦
 
 To install the required library, run:
 

@@ -14,6 +14,7 @@ This project is an Applicant Management System built using Python and the Solara
 To install the required library, run:
 
 ```bash
+python -m pip install --upgrade pip
 pip install solara
 ```
 ## Usage📋
